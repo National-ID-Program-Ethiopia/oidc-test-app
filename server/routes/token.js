@@ -25,13 +25,32 @@ router.post('/', async (req, res) => {
     const response = await axios.post(
       process.env.TOKEN_ENDPOINT,
       params.toString(),
-      { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }
+      { headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+       responseType: 'text', // 🛠️ Force response to be treated as raw text
+        transformResponse: [data => data] // 🛠️ Disable auto JSON parsing
+       }
+      
     );
 
-    res.json({ access_token: response.data.access_token });
+    // return res.json(response.data);
+    const rawData = response.data;
+
+    let parsedData;
+
+    if (typeof rawData === 'string') {
+      try {
+        parsedData = JSON.parse(rawData); // Convert JSON string to object
+      } catch (err) {
+        return res.status(500).json({ error: 'Invalid JSON from API' });
+      }
+    } else {
+      parsedData = rawData; // already an object
+    }
+
+return res.json(parsedData);
   } catch (err) {
     console.error(err.response?.data || err.message);
-    res.status(500).json({ error: 'Token request failed' });
+    return res.status(500).json({ error: 'Token request failed' });
   }
 });
 
