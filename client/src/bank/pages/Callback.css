@@ -1,0 +1,210 @@
+.cb-callback, .cb-callback * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.cb-callback {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.cb-callback .success-container {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+}
+
+.cb-callback .success-icon {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #28a745, #20c997);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 3rem;
+    color: white;
+    animation: cb-callback-pulse 2s infinite;
+}
+
+@keyframes cb-callback-pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.cb-callback h1 {
+    color: #1e3c72;
+    margin-bottom: 10px;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.cb-callback .subtitle {
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
+.cb-callback .user-info {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.cb-callback .user-info h3 {
+    color: #1e3c72;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.cb-callback .info-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.cb-callback .info-item:last-child {
+    border-bottom: none;
+}
+
+.cb-callback .info-label {
+    font-weight: 600;
+    color: #333;
+}
+
+.cb-callback .info-value {
+    color: #666;
+}
+
+.cb-callback .verified-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: #d4edda;
+    color: #155724;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.cb-callback .btn {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(45deg, #1e3c72, #2a5298);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.cb-callback .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(30, 60, 114, 0.3);
+}
+
+.cb-callback .loading {
+    display: none;
+    margin-top: 20px;
+}
+
+.cb-callback .spinner {
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #1e3c72;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: cb-callback-spin 1s linear infinite;
+    margin: 0 auto 10px;
+}
+
+@keyframes cb-callback-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.cb-callback .security-notice {
+    background: #e8f5e8;
+    border: 1px solid #28a745;
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 20px;
+    color: #155724;
+    font-size: 0.9rem;
+}
+
+/* Not in the Django template: verifying and error states for the React callback */
+.cb-callback .verifying .spinner {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 20px;
+}
+
+.cb-callback .error-icon {
+    background: linear-gradient(45deg, #dc3545, #ff6b6b);
+    animation: none;
+}
+
+.cb-callback .hint {
+    background: #fff8e6;
+    border: 1px solid #f7931e;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    color: #7a4a00;
+    font-size: 0.9rem;
+    text-align: left;
+    line-height: 1.5;
+}
+
+.cb-callback .hint strong {
+    display: block;
+    margin-bottom: 4px;
+}
+
+.cb-callback .tech-toggle {
+    background: none;
+    border: none;
+    color: #666;
+    font-size: 0.85rem;
+    text-decoration: underline;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.cb-callback .tech-detail {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 12px;
+    margin: -10px 0 20px;
+    color: #555;
+    font-size: 0.75rem;
+    text-align: left;
+    white-space: pre-wrap;
+    word-break: break-word;
+}

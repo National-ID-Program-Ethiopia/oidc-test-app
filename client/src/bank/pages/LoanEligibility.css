@@ -1,0 +1,406 @@
+.cb-loan-eligibility,
+.cb-loan-eligibility * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.cb-loan-eligibility {
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f5f7fa;
+    color: #333;
+}
+
+.cb-loan-eligibility .header {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: white;
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.cb-loan-eligibility .header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cb-loan-eligibility .logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.cb-loan-eligibility .logo i {
+    font-size: 2rem;
+}
+
+.cb-loan-eligibility .logo h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.cb-loan-eligibility .back-btn {
+    background: rgba(255,255,255,0.2);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.cb-loan-eligibility .back-btn:hover {
+    background: rgba(255,255,255,0.3);
+}
+
+.cb-loan-eligibility .main-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+.cb-loan-eligibility .eligibility-header {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+.cb-loan-eligibility .eligibility-icon {
+  flex-shrink: 0;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #ff6b35, #f7931e);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 3rem;
+    color: white;
+}
+
+.cb-loan-eligibility .eligibility-header h2 {
+    color: #1e3c72;
+    margin-bottom: 10px;
+    font-size: 2rem;
+}
+
+.cb-loan-eligibility .eligibility-header p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.cb-loan-eligibility .loan-types {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.cb-loan-eligibility .loan-card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.cb-loan-eligibility .loan-card:hover {
+    transform: translateY(-5px);
+}
+
+.cb-loan-eligibility .loan-card.eligible {
+    border-color: #28a745;
+}
+
+.cb-loan-eligibility .loan-card.not-eligible {
+    border-color: #dc3545;
+}
+
+.cb-loan-eligibility .loan-card.pending {
+    border-color: #ffc107;
+}
+
+.cb-loan-eligibility .card-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.cb-loan-eligibility .card-icon {
+  flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.cb-loan-eligibility .card-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #1e3c72;
+}
+
+.cb-loan-eligibility .eligibility-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-left: auto;
+}
+
+.cb-loan-eligibility .badge-eligible {
+    background: #d4edda;
+    color: #155724;
+}
+
+.cb-loan-eligibility .badge-not-eligible {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.cb-loan-eligibility .badge-pending {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.cb-loan-eligibility .loan-details {
+    margin-bottom: 20px;
+}
+
+.cb-loan-eligibility .loan-amount {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #28a745;
+    margin-bottom: 10px;
+}
+
+.cb-loan-eligibility .loan-rate {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.cb-loan-eligibility .loan-features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.cb-loan-eligibility .loan-features li {
+    padding: 5px 0;
+    color: #666;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.cb-loan-eligibility .loan-features li i {
+    color: #28a745;
+    font-size: 0.9rem;
+}
+
+.cb-loan-eligibility .action-btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.cb-loan-eligibility .action-btn.primary {
+    background: linear-gradient(45deg, #1e3c72, #2a5298);
+    color: white;
+}
+
+.cb-loan-eligibility .action-btn.primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(30, 60, 114, 0.3);
+}
+
+.cb-loan-eligibility .action-btn.secondary {
+    background: #f8f9fa;
+    color: #1e3c72;
+    border: 2px solid #1e3c72;
+}
+
+.cb-loan-eligibility .action-btn.secondary:hover {
+    background: #1e3c72;
+    color: white;
+}
+
+.cb-loan-eligibility .action-btn:disabled {
+    background: #e9ecef;
+    color: #6c757d;
+    cursor: not-allowed;
+}
+
+.cb-loan-eligibility .eligibility-criteria {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.cb-loan-eligibility .criteria-title {
+    color: #1e3c72;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cb-loan-eligibility .criteria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.cb-loan-eligibility .criteria-item {
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    border-left: 4px solid #1e3c72;
+}
+
+.cb-loan-eligibility .criteria-item h4 {
+    color: #1e3c72;
+    margin-bottom: 10px;
+}
+
+.cb-loan-eligibility .criteria-item p {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.cb-loan-eligibility .application-section {
+    background: linear-gradient(135deg, #e3f2fd 0%, #f0f8ff 100%);
+    border: 2px solid #2196f3;
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
+.cb-loan-eligibility .application-section h3 {
+    color: #1976d2;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cb-loan-eligibility .application-section p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.cb-loan-eligibility .application-btn {
+    background: linear-gradient(45deg, #2196f3, #1976d2);
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cb-loan-eligibility .application-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(33, 150, 243, 0.3);
+}
+
+.cb-loan-eligibility .help-section {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.cb-loan-eligibility .help-section h3 {
+    color: #1e3c72;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cb-loan-eligibility .help-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.cb-loan-eligibility .help-item {
+    text-align: center;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.cb-loan-eligibility .help-item:hover {
+    transform: translateY(-5px);
+}
+
+.cb-loan-eligibility .help-item i {
+    font-size: 2rem;
+    color: #1e3c72;
+    margin-bottom: 10px;
+}
+
+.cb-loan-eligibility .help-item h4 {
+    color: #1e3c72;
+    margin-bottom: 10px;
+}
+
+.cb-loan-eligibility .help-item p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .cb-loan-eligibility .loan-types {
+        grid-template-columns: 1fr;
+    }
+
+    .cb-loan-eligibility .criteria-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cb-loan-eligibility .help-grid {
+        grid-template-columns: 1fr;
+    }
+}

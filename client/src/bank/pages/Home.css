@@ -1,0 +1,191 @@
+.cb-home, .cb-home * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.cb-home {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.cb-home .login-container {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    max-width: 450px;
+    width: 100%;
+    text-align: center;
+}
+
+.cb-home .bank-logo {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(45deg, #1e3c72, #2a5298);
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.cb-home h1 {
+    color: #1e3c72;
+    margin-bottom: 10px;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.cb-home .subtitle {
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 1rem;
+}
+
+.cb-home .form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.cb-home label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: 500;
+}
+
+.cb-home input {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #e1e5e9;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background: #f8f9fa;
+}
+
+.cb-home input:focus {
+    outline: none;
+    border-color: #1e3c72;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(30, 60, 114, 0.1);
+}
+
+.cb-home .btn {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(45deg, #1e3c72, #2a5298);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.cb-home .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(30, 60, 114, 0.3);
+}
+
+.cb-home .divider {
+    margin: 20px 0;
+    position: relative;
+    text-align: center;
+    color: #666;
+}
+
+.cb-home .divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: #e1e5e9;
+}
+
+.cb-home .divider span {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 0 20px;
+}
+
+.cb-home .fayda-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(45deg, #ff6b35, #f7931e);
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.cb-home .fayda-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(255, 107, 53, 0.3);
+    color: white;
+    text-decoration: none;
+}
+
+.cb-home .security-badge {
+    margin-top: 20px;
+    padding: 10px;
+    background: #e8f5e8;
+    border-radius: 8px;
+    color: #2d5a2d;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.cb-home .features {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.cb-home .feature {
+    text-align: center;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    color: #666;
+    font-size: 14px;
+}
+
+.cb-home .feature i {
+    display: block;
+    font-size: 1.5rem;
+    color: #1e3c72;
+    margin-bottom: 8px;
+}
+
+@media (max-width: 480px) {
+    .cb-home .login-container {
+        padding: 30px 20px;
+    }
+    
+    .cb-home .features {
+        grid-template-columns: 1fr;
+    }
+}

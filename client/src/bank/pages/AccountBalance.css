@@ -1,0 +1,384 @@
+.cb-account-balance, .cb-account-balance * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.cb-account-balance {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f5f7fa;
+  color: #333;
+  min-height: 100vh;
+}
+
+.cb-account-balance .header {
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  color: white;
+  padding: 1rem 0;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.cb-account-balance .header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cb-account-balance .logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.cb-account-balance .logo i {
+  font-size: 2rem;
+}
+
+.cb-account-balance .logo h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.cb-account-balance .back-btn {
+  background: rgba(255,255,255,0.2);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.cb-account-balance .back-btn:hover {
+  background: rgba(255,255,255,0.3);
+}
+
+.cb-account-balance .main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 20px;
+}
+
+.cb-account-balance .balance-header {
+  background: white;
+  border-radius: 15px;
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.cb-account-balance .balance-icon {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #17a2b8, #6f42c1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 3rem;
+  color: white;
+}
+
+.cb-account-balance .balance-header h2 {
+  color: #1e3c72;
+  margin-bottom: 10px;
+  font-size: 2rem;
+}
+
+.cb-account-balance .balance-header p {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.cb-account-balance .accounts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 25px;
+  margin-bottom: 30px;
+}
+
+.cb-account-balance .account-card {
+  background: white;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+  border-left: 5px solid #1e3c72;
+}
+
+.cb-account-balance .account-card:hover {
+  transform: translateY(-5px);
+}
+
+.cb-account-balance .account-card.savings {
+  border-left-color: #28a745;
+}
+
+.cb-account-balance .account-card.checking {
+  border-left-color: #17a2b8;
+}
+
+.cb-account-balance .account-card.business {
+  border-left-color: #ffc107;
+}
+
+.cb-account-balance .account-card.investment {
+  border-left-color: #6f42c1;
+}
+
+.cb-account-balance .card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.cb-account-balance .account-info h3 {
+  color: #1e3c72;
+  font-size: 1.3rem;
+  margin-bottom: 5px;
+}
+
+.cb-account-balance .account-number {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.cb-account-balance .account-type {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.cb-account-balance .type-savings {
+  background: #d4edda;
+  color: #155724;
+}
+
+.cb-account-balance .type-checking {
+  background: #d1ecf1;
+  color: #0c5460;
+}
+
+.cb-account-balance .type-business {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.cb-account-balance .type-investment {
+  background: #e2e3f1;
+  color: #495057;
+}
+
+.cb-account-balance .balance-section {
+  margin-bottom: 20px;
+}
+
+.cb-account-balance .balance-amount {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #28a745;
+  margin-bottom: 5px;
+}
+
+.cb-account-balance .balance-label {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.cb-account-balance .account-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.cb-account-balance .action-btn {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-size: 0.9rem;
+}
+
+.cb-account-balance .action-btn.primary {
+  background: linear-gradient(45deg, #1e3c72, #2a5298);
+  color: white;
+}
+
+.cb-account-balance .action-btn.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(30, 60, 114, 0.3);
+}
+
+.cb-account-balance .action-btn.secondary {
+  background: #f8f9fa;
+  color: #1e3c72;
+  border: 2px solid #1e3c72;
+}
+
+.cb-account-balance .action-btn.secondary:hover {
+  background: #1e3c72;
+  color: white;
+}
+
+.cb-account-balance .summary-section {
+  background: white;
+  border-radius: 15px;
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.cb-account-balance .summary-title {
+  color: #1e3c72;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cb-account-balance .summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.cb-account-balance .summary-item {
+  text-align: center;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 10px;
+}
+
+.cb-account-balance .summary-item h4 {
+  color: #1e3c72;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.cb-account-balance .summary-item .amount {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #28a745;
+}
+
+.cb-account-balance .summary-item .amount.negative {
+  color: #dc3545;
+}
+
+.cb-account-balance .quick-actions {
+  background: white;
+  border-radius: 15px;
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.cb-account-balance .quick-actions h3 {
+  color: #1e3c72;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cb-account-balance .actions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.cb-account-balance .quick-action-btn {
+  padding: 15px;
+  border: 2px solid #e1e5e9;
+  border-radius: 10px;
+  background: white;
+  color: #1e3c72;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.cb-account-balance .quick-action-btn:hover {
+  background: #1e3c72;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.cb-account-balance .security-notice {
+  background: linear-gradient(135deg, #e8f5e8 0%, #f0f8f0 100%);
+  border: 2px solid #28a745;
+  border-radius: 15px;
+  padding: 25px;
+  margin-bottom: 30px;
+}
+
+.cb-account-balance .security-notice h3 {
+  color: #28a745;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cb-account-balance .security-notice p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.cb-account-balance .security-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.cb-account-balance .security-feature {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #28a745;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .cb-account-balance .accounts-grid {
+    grid-template-columns: 1fr;
+  }
+  .cb-account-balance .summary-grid {
+    grid-template-columns: 1fr;
+  }
+  .cb-account-balance .actions-grid {
+    grid-template-columns: 1fr;
+  }
+  .cb-account-balance .security-features {
+    grid-template-columns: 1fr;
+  }
+}

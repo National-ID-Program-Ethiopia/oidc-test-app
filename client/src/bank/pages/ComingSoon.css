@@ -1,0 +1,150 @@
+.cb-coming-soon {
+  min-height: 100vh;
+}
+
+.cb-coming-soon, .cb-coming-soon * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.cb-coming-soon {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.cb-coming-soon .coming-soon-container {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+}
+
+.cb-coming-soon .coming-soon-icon {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #ffc107, #ff9800);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 3rem;
+  color: white;
+  animation: cb-coming-soon-pulse 2s infinite;
+}
+
+@keyframes cb-coming-soon-pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.cb-coming-soon h1 {
+  color: #1e3c72;
+  margin-bottom: 10px;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.cb-coming-soon .subtitle {
+  color: #666;
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+}
+
+.cb-coming-soon .feature-info {
+  background: #f8f9fa;
+  border-radius: 15px;
+  padding: 25px;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.cb-coming-soon .feature-info h3 {
+  color: #1e3c72;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.cb-coming-soon .feature-list {
+  list-style: none;
+  padding: 0;
+}
+
+.cb-coming-soon .feature-list li {
+  padding: 10px 0;
+  color: #666;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cb-coming-soon .feature-list li i {
+  color: #ffc107;
+  font-size: 1.2rem;
+}
+
+.cb-coming-soon .btn {
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(45deg, #1e3c72, #2a5298);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.cb-coming-soon .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(30, 60, 114, 0.3);
+}
+
+.cb-coming-soon .btn.secondary {
+  background: #f8f9fa;
+  color: #1e3c72;
+  border: 2px solid #1e3c72;
+}
+
+.cb-coming-soon .btn.secondary:hover {
+  background: #1e3c72;
+  color: white;
+}
+
+.cb-coming-soon .notice {
+  background: #e3f2fd;
+  border: 1px solid #2196f3;
+  border-radius: 8px;
+  padding: 15px;
+  margin-top: 20px;
+  color: #1976d2;
+  font-size: 0.9rem;
+}
+
+.cb-coming-soon .notice i {
+  margin-right: 8px;
+}
