@@ -1,5 +1,7 @@
 import express from 'express';
 import axios from 'axios';
+import { decodeUserinfoToken } from '../utils/userinfoDecoder.js';
+import { toErrorResponse } from '../utils/appError.js';
 
 const router = express.Router();
 
@@ -10,13 +12,15 @@ router.post('/', async (req, res) => {
 
   try {
     const response = await axios.get(process.env.USERINFO_ENDPOINT, {
-      headers: { Authorization: `Bearer ${access_token}` }
+      headers: { Authorization: `Bearer ${access_token}` },
+      responseType: 'text'
     });
 
-    res.json(response.data);
+    const userInfo = await decodeUserinfoToken(response.data);
+    res.json(userInfo);
   } catch (err) {
     console.error(err.response?.data || err.message);
-    res.status(500).json({ error: 'Userinfo request failed' });
+    res.status(500).json(toErrorResponse(err, 'Could not load your profile'));
   }
 });
 

@@ -75,6 +75,8 @@ USERINFO_ENDPOINT=https://example.com/oidc/userinfo
 REDIRECT_URI=http://localhost:3000/callback
 CLIENT_ASSERTION_TYPE=urn:ietf:params:oauth:client-assertion-type:jwt-bearer
 PRIVATE_KEY_BASE64=base64_encoded_jwk
+# Encryption private JWK (use=enc), JSON or base64. When set, userinfo must be JWE and is decrypted with it;
+PRIVATE_KEY_USER_INFO=your_encryption_private_jwk_base64
 ```
 
 
@@ -122,5 +124,5 @@ React frontend will proxy all /api/* requests to the backend using the proxy set
 
 5. Result is displayed in the app UI
 
-## 🧑‍💻👩‍💻 Contributing 
+##  Contributing 
 PRs and suggestions welcome! For improvements, please, open an issue or contact us.

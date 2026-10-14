@@ -1,6 +1,7 @@
 import express from 'express';
 import axios from 'axios';
 import { generateSignedJwt } from '../utils/jwtGenerator.js';
+import { toErrorResponse } from '../utils/appError.js';
 
 const router = express.Router();
 
@@ -28,10 +29,13 @@ router.post('/', async (req, res) => {
       { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }
     );
 
-    res.json({ access_token: response.data.access_token });
+    res.json({
+      access_token: response.data.access_token,
+      id_token: response.data.id_token
+    });
   } catch (err) {
     console.error(err.response?.data || err.message);
-    res.status(500).json({ error: 'Token request failed' });
+    res.status(500).json(toErrorResponse(err, 'Sign-in could not be completed'));
   }
 });
 

@@ -1,6 +1,18 @@
 import React from "react";
+import Layout from "./Layout";
+
+export const NONCE_STORAGE_KEY = "oidc_nonce";
+
+// 18 random digits with a non-zero lead stays below 2^63, so eSignet can read it as a Java long.
+const generateNonce = () => {
+  const bytes = crypto.getRandomValues(new Uint8Array(18));
+  const digits = Array.from(bytes, (b) => b % 10);
+  digits[0] = (bytes[0] % 9) + 1;
+  return digits.join("");
+};
+
 const SignIn = () => {
-  const generateSignInUrl = () => {
+  const generateSignInUrl = (nonce) => {
     const params = new URLSearchParams({
       client_id: process.env.REACT_APP_CLIENT_ID,
       redirect_uri: process.env.REACT_APP_REDIRECT_URI,
@@ -11,7 +23,7 @@ const SignIn = () => {
       code_challenge: "E9Melhoa2OwvFrEMTJguCHaoeK1t8URWbuGJSstw-cM",
       code_challenge_method: "S256",
       display: "page",
-      nonce: "g4DEuje5Fx57Vb64dO4oqLHXGT8L8G7g",
+      nonce,
       state: "ptOO76SD",
       ui_locales: "en",
     });
@@ -19,89 +31,47 @@ const SignIn = () => {
     return `${process.env.REACT_APP_AUTHORIZATION_ENDPOINT}?${params.toString()}`;
   };
 
-  return (
-    <div style={styles.body}>
-      <div style={styles.container}>
-        <h1 style={styles.heading}>Welcome to Fayda Mock Relying Party Portal</h1>
-        <form action="/login" method="POST">
-          <input type="text" name="username" placeholder="Username" required style={styles.input} />
-          <input type="email" name="email" placeholder="Email" required style={styles.input} />
-          <input type="password" name="password" placeholder="Password" required style={styles.input} />
-          <button type="submit" style={styles.btn}>Sign In</button>
-        </form>
-        <p>or</p>
-        {/* Updated link to use the dynamically generated URL */}
-        <a href={generateSignInUrl()} style={styles.link}>
-          Sign in with Fayda E-Signet
-        </a>
-      </div>
-      <footer style={styles.footer}>
-        &copy; 2025 National ID. All Rights Reserved.
-      </footer>
-    </div>
-  );
-};
+  const startFaydaLogin = (event) => {
+    event.preventDefault();
+    const nonce = generateNonce();
+    localStorage.setItem(NONCE_STORAGE_KEY, nonce);
+    window.location.assign(generateSignInUrl(nonce));
+  };
 
-const styles = {
-  body: {
-    margin: 0,
-    padding: 0,
-    fontFamily: "Arial, sans-serif",
-    backgroundColor: "#1a1a2e",
-    color: "white",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    height: "100vh",
-    flexDirection: "column",
-  },
-  container: {
-    backgroundColor: "#162447",
-    borderRadius: "12px",
-    padding: "40px",
-    boxShadow: "0 10px 30px rgba(0, 0, 0, 0.2)",
-    textAlign: "center",
-    maxWidth: "400px",
-    width: "100%",
-  },
-  heading: {
-    marginBottom: "20px",
-    color: "#f8c94e",
-  },
-  input: {
-    width: "100%",
-    padding: "12px",
-    margin: "10px 0",
-    borderRadius: "8px",
-    border: "1px solid #f8c94e",
-    backgroundColor: "#0f3460",
-    color: "white",
-  },
-  btn: {
-    backgroundColor: "#f8c94e",
-    color: "#1a1a2e",
-    padding: "12px",
-    width: "100%",
-    border: "none",
-    borderRadius: "8px",
-    marginTop: "20px",
-    cursor: "pointer",
-    fontSize: "16px",
-    fontWeight: "bold",
-  },
-  link: {
-    color: "#f8c94e",
-    textDecoration: "none",
-    fontSize: "14px",
-    marginTop: "15px",
-    display: "inline-block",
-  },
-  footer: {
-    position: "absolute",
-    bottom: "10px",
-    color: "white",
-    fontSize: "12px",
-  },
+  return (
+    <Layout>
+      <div className="card signin">
+        <div className="signin-head">
+          <img src="/national-id-logo.png" alt="" />
+          <h1>Welcome back</h1>
+          <p>Sign in to the Fayda Mock Relying Party portal</p>
+        </div>
+
+        <a href="#fayda-login" onClick={startFaydaLogin} className="btn btn-primary">
+          <img src="/national-id-logo.png" alt="" />
+          Sign in with Fayda eSignet
+        </a>
+
+        <div className="divider">or use your account</div>
+
+        <form action="/login" method="POST">
+          <label className="field">
+            <span>Username</span>
+            <input type="text" name="username" autoComplete="username" required />
+          </label>
+          <label className="field">
+            <span>Email</span>
+            <input type="email" name="email" autoComplete="email" required />
+          </label>
+          <label className="field">
+            <span>Password</span>
+            <input type="password" name="password" autoComplete="current-password" required />
+          </label>
+          <button type="submit" className="btn btn-outline">Sign in</button>
+        </form>
+      </div>
+    </Layout>
+  );
 };
 
 export default SignIn;

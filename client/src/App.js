@@ -3,6 +3,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import SignIn from './components/SignIn';
 import Callback from './components/Callback';
+import './theme.css';
 console.log(process.env.REACT_APP_CLIENT_ID);
 
 
